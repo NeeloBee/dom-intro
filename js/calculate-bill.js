@@ -12,12 +12,9 @@ const billStringElement = document.querySelector(".billString");
 //  * check if it is a call or an sms and add the right amount to the overall total
 //  * once done looping over all the entries - display the total onto the screen in the billTotal element
 
-// add event listener
-function calculateBtnClicked(){
-    // logic goes here
-    
+function totalPhoneBill(billString) {
      // get the string entered in the textArea
-    var billString = billStringElement.value;
+     var billString = billStringElement.value;
      //split the string
     var billItems = billString.split(",");
     // a variable for the total phone bill.
@@ -35,6 +32,14 @@ function calculateBtnClicked(){
     
     //round to two decimals
     var roundedBillTotal = billTotal.toFixed(2);
+    return roundedBillTotal;
+}
+// add event listener
+function calculateBtnClicked(){
+    // logic goes here
+    
+    var billString = billStringElement.value;
+    const roundedBillTotal = totalPhoneBill(billString);
     billTotalElement.innerHTML = roundedBillTotal;
 }
     calculateBtn.addEventListener('click', calculateBtnClicked);
