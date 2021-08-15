@@ -6,6 +6,9 @@ const billTotalElement = document.querySelector(".billTotal");
 //get a reference to the billString
 const billStringElement = document.querySelector(".billString");
 
+//get a reference to the bill total element
+ const billTotalSpanElement = document.querySelector(".total");
+
 //create the function that will be called when the calculate button is pressed
 //  * this function should read the string value entered - split it on a comma.
 //  * loop over all the entries in the the resulting list
@@ -34,13 +37,37 @@ function totalPhoneBill(billString) {
     var roundedBillTotal = billTotal.toFixed(2);
     return roundedBillTotal;
 }
+
+
+function styleTotalColor(roundedBillTotal) {
+    const currentTotal = Number(roundedBillTotal);
+    
+    billTotalSpanElement.classList.remove("danger");
+    billTotalSpanElement.classList.remove("warning");
+
+
+    if (currentTotal >= 30) {
+        //make the total red
+        billTotalSpanElement.classList.add("danger");
+    } else if (currentTotal > 20 && currentTotal < 30) {
+        //make the total orange
+        billTotalSpanElement.classList.add("warning");
+    }
+    
+
+
+}
 // add event listener
 function calculateBtnClicked(){
     // logic goes here
     
     var billString = billStringElement.value;
     const roundedBillTotal = totalPhoneBill(billString);
+    
+   
+    
     billTotalElement.innerHTML = roundedBillTotal;
+    styleTotalColor(roundedBillTotal);
 }
     calculateBtn.addEventListener('click', calculateBtnClicked);
    
