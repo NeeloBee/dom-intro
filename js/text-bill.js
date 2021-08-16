@@ -6,6 +6,10 @@ var textTotalAddBtn = document.querySelector(".addToBillBtn");
 var callsTotalElem = document.querySelector(".callTotalOne"); 
 var smsTotalElem = document.querySelector(".smsTotalOne"); 
 var totalCostElem = document.querySelector(".totalOne");
+//get a reference for the total bill element
+//const totalOneSpanElement = document.querySelector(".totalOne");
+//reference totalOne
+//var totalOne = document.querySelector(".totalOne");
 //add an event listener for when the add button is pressed
 
 //in the event listener check if the value in the bill type textbox is 'sms' or 'call'
@@ -39,22 +43,31 @@ function textBillTotal(){
 
     //var totalCostElem = document.querySelector(".totalOne");
     //color the total based on the criteria
-    if (totalCostElem >= 50){
+
+    
+    
+    if (totalCost >= 50){
         // adding the danger class will make the text red
         totalCostElem.classList.add("danger");
     }
-    else if (totalCostElem >= 30){
+    else if (totalCost >= 30){
         totalCostElem.classList.add("warning");
     }
 
 }
 
-
-    
-
 textTotalAddBtn.addEventListener('click', textBillTotal);
 
 
+
+/*const totalCost = Number(totalCostElem);
+if (totalCost > 30) {
+    //make the total orange
+    totalOneSpanElement.classList.add("warning");
+} else if (totalCost > 50) {
+    //make the total red
+    totalOneSpanElement.classList.add("danger");
+}
 //making a clean independent style for the color.
 
 /*function styleTotalColor2(totalOne) {
