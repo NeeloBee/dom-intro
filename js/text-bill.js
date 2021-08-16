@@ -37,7 +37,7 @@ function textBillTotal(){
     var totalCost = callsTotal + smsTotal;
     totalCostElem.innerHTML = totalCost.toFixed(2);
 
-    var totalCostElem = document.querySelector(".totalOne");
+    //var totalCostElem = document.querySelector(".totalOne");
     //color the total based on the criteria
     if (totalCostElem >= 50){
         // adding the danger class will make the text red
