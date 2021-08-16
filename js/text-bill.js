@@ -36,7 +36,7 @@ function textBillTotal(){
     smsTotalElem.innerHTML = smsTotal.toFixed(2);
     var totalCost = callsTotal + smsTotal;
     totalCostElem.innerHTML = totalCost.toFixed(2);
-}
+
     var totalCostElem = document.querySelector(".totalOne");
     //color the total based on the criteria
     if (totalCostElem >= 50){
@@ -47,29 +47,31 @@ function textBillTotal(){
         totalCostElem.classList.add("warning");
     }
 
+}
+
+
+    
+
 textTotalAddBtn.addEventListener('click', textBillTotal);
 
 
 //making a clean independent style for the color.
 
-function styleTotalColor(totalOne) {
+/*function styleTotalColor2(totalOne) {
     const totalCost = Number(totalOne);
     
-    totalCostElem.classList.remove("danger");
-    totalCostElem.classList.remove("warning");
+    totalCostSpanElement.classList.remove("danger");
+    totalCostSpanElement.classList.remove("warning");
 
 
     if (totalOne >= 30) {
         //make the total red
-        otalCostElem.classList.add("danger");
+        totalCostSpanElement.classList.add("danger");
     } else if (totalOne > 20 && currentTotal < 30) {
         //make the total orange
-        totalCostElem.classList.add("warning");
-    }
-    
+        totalCostSpanElement.classList.add("warning");
+    }*/
 
-
-}
 
 /*function textBillTotal(){
 

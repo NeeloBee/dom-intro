@@ -7,7 +7,7 @@ const billTotalElement = document.querySelector(".billTotal");
 const billStringElement = document.querySelector(".billString");
 
 //get a reference to the bill total element
- const billTotalSpanElement = document.querySelector(".total");
+ const billTotalSpanElement = document.querySelector(".billTotal");
 
 //create the function that will be called when the calculate button is pressed
 //  * this function should read the string value entered - split it on a comma.
@@ -64,7 +64,6 @@ function calculateBtnClicked(){
     var billString = billStringElement.value;
     const roundedBillTotal = totalPhoneBill(billString);
     
-   
     
     billTotalElement.innerHTML = roundedBillTotal;
     styleTotalColor(roundedBillTotal);
