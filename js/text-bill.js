@@ -30,8 +30,7 @@ function textBillTotal(){
     // update the correct total
     if (billTypeEntered === "call"){
         callsTotal += 2.75
-    }
-    else if (billTypeEntered === "sms"){
+    } else if (billTypeEntered === "sms"){
         smsTotal += 0.75;
     }
     
