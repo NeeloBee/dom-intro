@@ -7,48 +7,47 @@ const warningLevelSetting = document.querySelector(".warningLevelSetting");
 const criticalLevelSetting = document.querySelector(".criticalLevelSetting");
 const totalSettings = document.querySelector(".totalSettings");
 //get a reference to the add button
-const button-primary = document.querySelector(".button-primary");
+const SettingsAddBtn = document.querySelector(".SettingsAddBtn");
 //get a reference to the 'Update settings' button
 const updateSettings = document.querySelector(".updateSettings");
 // create a variables that will keep track of all the settings
 var settings = callsTotal + smsTotal
 // create a variables that will keep track of all three totals.
-const callTotal = document.querySelector(".callTotalSettings");
-const smsTotal = document.querySelector(".smsTotalSettings");
-const total = document.querySelector(".totalSettings");
-var totals = callTotalSettings + smsTotalSetting;
+const callTotalElement = document.querySelector(".callTotalSettings");
+const smsTotalElement = document.querySelector(".smsTotalSettings");
+const totalElement = document.querySelector(".totalSettings");
+//var totals = callTotalSettings + smsTotalSettings;
 // these variables are global and defined outside of the Add button event listener.
-var callsTotal = 0;
+var callTotal = 0;
 var smsTotal = 0;
+var total = 0;
 //add an event listener for when the 'Update settings' button is pressed
 updateSettings.addEventListener('click', function(){
-    var button-primary = document.querySelector(".billItemTypeWithSettings:checked");
-    if (button-primary.value === 'call') {
-        callsTotal += 2.75;
-    } else if (button-primary.value === 'sms') {
-        smsTotal += 0.75;
-    }
- 
-//update the totals that is displayed on the screen.
-    callTotalTwo.innerHTML = callsTotal.toFixed(2);
-    smsTotalTwo.innerHTML = smsTotal.toFixed(2);
-    var totalCost = callsTotal + smsTotal;
-    totalTwo.innerHTML = totalCost.toFixed(2);
+  callsTotal = callsTotal + callCostSetting.value;
+   
 });
 //add an event listener for when the add button is pressed
-button-primary.addEventListener('click', function(){
-    var button-primary = document.querySelector(".billItemTypeWithSettings:checked");
-    if (button-primary.value === 'call') {
-        warningLevelSetting
-    } else if (button-primary.value === 'sms') {
-        criticalLevelSetting;
-    }
+//console.log(buttonPrimary);
+SettingsAddBtn.addEventListener('click', function(){
+    //alert("hello");
+    var billItemTypeWithSettings = document.querySelector(".billItemTypeWithSettings:checked");
+    //console.log(billItemTypeWithSettings.value);
+    if (billItemTypeWithSettings.value === 'call') {
+        callsTotal += 2.75;
+    } else if (billItemTypeWithSettings.value === 'sms') {
+        smsTotal += 0.75;
+    } 
 
 //update the totals that is displayed on the screen.
-    callTotalTwo.innerHTML = callsTotal.toFixed(2);
+    callTotalElement.innerHTML = callsTotal.toFixed(2);
+    smsTotalElement.innerHTML = smsTotal.toFixed(2);
+    total = callsTotal + smsTotal;
+    totalElement.innerHTML = total.toFixed(2);
+//update the totals that is displayed on the screen.
+    /*callTotalTwo.innerHTML = callsTotal.toFixed(2);
     smsTotalTwo.innerHTML = smsTotal.toFixed(2);
     var totalCost = callsTotal + smsTotal;
-    totalTwo.innerHTML = totalCost.toFixed(2);
+    totalTwo.innerHTML = totalCost.toFixed(2);*/
 
 
 });
@@ -59,6 +58,3 @@ button-primary.addEventListener('click', function(){
 // * display the latest total on the screen.
 // * check the value thresholds and display the total value in the right color.
 
-
-//use the warning level: toggle
-//use the critical level: toggle
